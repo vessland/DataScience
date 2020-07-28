@@ -6,7 +6,7 @@ plt.rcParams['font.sans-serif'] = 'Microsoft YaHei'
 plt.rcParams['axes.unicode_minus'] = False
 plt.style.use('ggplot')
 
-data=pd.read_csv('Userrate1.csv')
+data=pd.read_csv('Userrate2.csv')
 
 f = open('test_data.json', encoding='utf-8')
 res = f.read()

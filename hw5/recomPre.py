@@ -1,5 +1,5 @@
 import os
-os.chdir(r"C:\Users\DELL\PycharmProjects\DataScience\hw5")
+os.chdir(r"C:\Users\昭宁\Desktop\数据科学基础大作业\DataScience\hw5")
 import pandas as pd
 import numpy as np
 csv_data = pd.read_csv("./finalrate.csv")
@@ -10,10 +10,10 @@ for line in file.readlines()[1:50000]:
     line = line.strip().split(',')
     #如果字典中没有某位用户，则使用用户ID来创建该用户
     if not line[0] in ratings.keys():
-        ratings[line[0]] = {line[3]:line[1]}
+        ratings[line[0]] = {line[1]:line[3]}
     #否则直接添加以该用户ID为key字典中
     else:
-        ratings[line[0]][line[3]] = line[1]
+        ratings[line[0]][line[1]] = line[3]
 #ratings
 
 """计算任何两位用户之间的相似度，由于每位用户做的题目不完全一样，所以兽先要找到两位用户共同做过的题目
@@ -41,7 +41,7 @@ def top10_similar(userID):
             res.append((userid, similar))
     res.sort(key = lambda val:val[1])
     return res[:4]
-RES = top10_similar('48117')
+# RES = top10_similar('48117')
 #RES
 
 """根据用户推荐题目给其他人
@@ -59,7 +59,7 @@ def recommend(user):
     recommendations.sort(key = lambda val:val[1], reverse = True)#按照评分排序
     #返回评分最高的10条题目
     return recommendations[:10]
-Recommendations = recommend('48117')
+# Recommendations = recommend('48117')
 #Recommendations
 
 """计算两个用户的Pearson相关系数
@@ -93,5 +93,5 @@ def pearson_sim(user1, user2):
         return 0
     r = num / den
     return r
-R = pearson_sim('49405', '60690')
+# R = pearson_sim('49405', '60690')
 #R
