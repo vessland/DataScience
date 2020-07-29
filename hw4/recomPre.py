@@ -2,9 +2,9 @@ import os
 os.chdir(r"C:\Users\昭宁\Desktop\数据科学基础大作业\DataScience\hw4")
 import pandas as pd
 import numpy as np
-csv_data = pd.read_csv("./finalrate.csv")
+csv_data = pd.read_csv("../hw5/Userrate.csv")
 
-file = open("./finalrate.csv", 'r', encoding = 'UTF-8')
+file = open("../hw5/Userrate.csv", 'r', encoding = 'UTF-8')
 ratings = {} ##存放每个用户的题目和评分
 for line in file.readlines()[1:50000]:
     line = line.strip().split(',')
