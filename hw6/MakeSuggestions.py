@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import os
 # import docx
-from hw5.recomPre import top10_similar, recommend
+from hw5.recomPre import top4_similar, recommend
 
 
 # 数据准备
@@ -86,7 +86,7 @@ def suggestion_for_code_quality(line):
 
 # 返回推荐共同学习的伙伴
 def suggestion_for_partner(user_id):
-    similar_user_detail = top10_similar(str(user_id))
+    similar_user_detail = top4_similar(str(user_id))
     similar_user_id = []
     for e in similar_user_detail:
         similar_user_id.append(e[0])
