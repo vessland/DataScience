@@ -3,11 +3,11 @@ import pandas as pd
 import numpy as np
 import os
 # import docx
-from hw5.recomPre import top4_similar, recommend
+from hw4.recomPre import top4_similar, recommend
 
 
 # 数据准备
-os.chdir(r"C:\Users\昭宁\Desktop\数据科学基础大作业\DataScience\hw6")
+os.chdir(r"C:\Users\昭宁\Desktop\数据科学基础大作业\DataScience\hw5")
 data = pd.read_csv("Userrate2.csv")
 columns = ['user_id', 'rate', '字符串', '线性表', '数组', '查找算法', '排序算法', '数字操作', '图结构', '树结构']
 quantile_data = pd.read_csv("quantiles.csv")
